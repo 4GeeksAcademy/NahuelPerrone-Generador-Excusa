@@ -5,30 +5,34 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-window.onload = function() 
 
-   {
-  let GeneradorExcusa = () => 
-    {
-       let who = ['The dog', 'My grandma', 'The mailman', 'My bird'];
-       let who2 = who [Math.floor(Math.random()*(who.length))];
+window.onload = function () {
 
-       let action = ['ate', 'peed', 'crushed', 'broke'];
-       let action2 = action[Math.floor(Math.random()*(action.length))];
 
-       let what = ['my homework', 'my phone', 'the car'];
-       let what2 = what [Math.floor(Math.random()*(what.length))];
+  let generadorExcusa = () => {
 
-       let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my lunch', 'while I was praying'];
-       let when2 = when [Math.floor(Math.random()*(when.length))];
+    let who = ['The dog', 'My grandma', 'The mailman', 'My bird'];
+    let whoRandom = who[random(who)];
 
-       let GeneradorExcusa = `${who2} ${action2} ${what2} ${when2}`;
-       return GeneradorExcusa
+    let action = ['ate', 'peed', 'crushed', 'broke'];
+    let actionRandom = action[random(action)];
 
+    let what = ['my homework', 'my phone', 'the car'];
+    let whatRandom = what[random(what)];
+
+    let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my lunch', 'while I was praying'];
+    let whenRandom = when[random(when)];
+
+    let generadorExcusa = `${whoRandom} ${actionRandom} ${whatRandom} ${whenRandom}`;
+
+    return generadorExcusa;
   }
 
-document.getElementById("excuse").innerHTML = GeneradorExcusa()
+  function random(options) {
+    return [Math.floor(Math.random() * options.length)];
+  }
+
+  document.getElementById("excuse").innerHTML = generadorExcusa()
 }
 
-   
- 
+
